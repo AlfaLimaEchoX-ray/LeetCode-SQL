@@ -1,0 +1,8 @@
+# Write a SQL query that finds out employees who earn more than their managers. 
+
+SELECT Name AS Employee
+FROM Employee as x
+WHERE Salary >
+  (SELECT Salary
+  FROM Employee
+  WHEE id = x.ManagerId);
