@@ -1,0 +1,6 @@
+# Write a SQL query to output movies with an odd numbered ID and a description that is not 'boring', order the result by rating.
+
+SELECT *
+FROM cinema
+WHERE id % 2 <> 0 AND NOT description = 'boring'
+ORDER BY rating DESC;
