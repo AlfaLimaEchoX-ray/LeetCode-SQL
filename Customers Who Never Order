@@ -1,0 +1,12 @@
+# Write a SQL query to find all customers who never order anything
+
+SELECT Name AS Customers
+FROM Customers
+LEFT JOIN Orders ON Orders.CustomerId=Customers.Id
+WHERE Customers.Id NOT IN
+  (SELECT CustomerID 
+   FROM Orders
+   GROUP BY CustomerId);
+
+#We left join orders because we only want the customers who are in the first table but not second.
+#We use NOT IN with WHERE clause to show we only want customers who are not in the orders table (did not place the order)
