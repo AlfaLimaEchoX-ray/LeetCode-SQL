@@ -1,0 +1,6 @@
+# Write a SQL query to get the second highest salary from the employee table
+
+SELECT MAX(Salary) AS SecondHighest Salary
+FROM Employee
+WHERE Salary < 
+  (SELECT MAX(Salary) FROM Employee);
